@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Employees</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(employees)}">
+        <h2>All Employees</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>EmpNo</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>CellNo</th>
+                <th>Emp Email</th>
+                <th>Pin</th>
+                <th>Manager Cell</th>
+                <th>Manager Email</th>
+                <th>Language</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="employee :${employees}">
+                <td th:text="${employee.id}">Id</td>
+                <td th:text="${employee.empno}">EmpNo</td>
+                <td th:text="${employee.name}">Name</td>
+                <td th:text="${employee.surname}">Surname</td>
+                <td th:text="${employee.cellno}">Cell No</td>
+                <td th:text="${employee.empEmail}">Emp Email</td>
+                <td th:text="${employee.pin}">Pin</td>
+                <td th:text="${employee.managerCell}">Manager Cell</td>
+                <td th:text="${employee.managerEmail}">Manager Email</td>
+                <td th:text="${employee.language}">Language</td>
+                <td><a th:href="${'/employees/edit/' + employee.id}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'/employees/delete/' + employee.id}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

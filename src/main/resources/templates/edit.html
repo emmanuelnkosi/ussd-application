@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Edit Product Details</title>
+    <th:block th:include="layout/header"></th:block>
+</head>
+<body>
+<div class="container">
+    <h2>Edit Employee Details</h2>
+    <div>
+        <form class="form-horizontal" th:object="${employee}" th:action="@{/employees}" method="post">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="hidden" class="form-control" th:field="*{id}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">EmpNo:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{empno}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{name}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Surname:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{surname}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CellNo:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{cellno}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Emp Email:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{empEmail}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Pin:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{pin}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">ManagerCell:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{managerCell}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Manager Email:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{managerEmail}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Language:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{language}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
